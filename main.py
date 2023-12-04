@@ -28,8 +28,6 @@ tipos = st.radio('Quais os dados na tabela?',
 
 if tab and tipos:
 
-    tabela = None
-
     if tipos == 'Transcritos e Metabólitos':
         try:
             tabela = ler_TM(tab)
@@ -53,12 +51,15 @@ if tab and tipos:
             tabela = ler_TPM(tab)
         except:
             st.write('Tipo de dado Errado')
-
-    st.write(tabela)
-
-    excel = make_excel(tabela)
-
-    ste.download_button(label="Download Resultados",
-                        data=excel,
-                        file_name="Resultados_Organizados_Fusion.xlsx",
-                        mime="application/vnd.ms-excel")
+            
+    try:
+        st.write(tabela)
+    
+        excel = make_excel(tabela)
+    
+        ste.download_button(label="Download Resultados",
+                            data=excel,
+                            file_name="Resultados_Organizados_Fusion.xlsx",
+                            mime="application/vnd.ms-excel")
+    except:
+        pass
