@@ -28,6 +28,8 @@ tipos = st.radio('Quais os dados na tabela?',
 
 if tab and tipos:
 
+    tabela = None
+
     if tipos == 'Transcritos e Metabólitos':
         try:
             tabela = ler_TM(tab)
