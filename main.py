@@ -13,10 +13,7 @@ hide_menu_style = """
 
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
-title_col1, title_col2, title_col3, title_col4 = st.columns((1, 2, 2, 1))
-col1, col2, col3, col4 = st.columns((1, 2, 2, 1))
-
-st.title('TJunção dos Resultados - Fusion')
+st.title('Junção dos Resultados - Fusion')
 
 tab = st.file_uploader('Insira o arquivo com os resultados do Fusion',
                        type='xlsx',
@@ -32,16 +29,28 @@ tipos = st.radio('Quais os dados na tabela?',
 if tab and tipos:
 
     if tipos == 'Transcritos e Metabólitos':
-        tabela = ler_TM(tab)
+        try:
+            tabela = ler_TM(tab)
+        except:
+            st.write('Tipo de dado Errado')
 
     if tipos == 'Proteínas e Metabólitos':
-        tabela = ler_PM(tab)
+        try:
+            tabela = ler_PM(tab)
+        except:
+            st.write('Tipo de dado Errado')
 
     if tipos == 'Transcritos e Proteínas':
-        tabela = ler_TP(tab)
+        try:
+            tabela = ler_TP(tab)
+        except:
+            st.write('Tipo de dado Errado')
 
     if tipos == 'Transcritos, Proteínas e Metabólitos':
-        tabela = ler_TPM(tab)
+        try:
+            tabela = ler_TPM(tab)
+        except:
+            st.write('Tipo de dado Errado')
 
     st.write(tabela)
 
