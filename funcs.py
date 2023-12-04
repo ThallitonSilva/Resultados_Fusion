@@ -3,8 +3,8 @@ import pandas as pd
 
 
 def ler_TM(table):
-    tr = pd.read_excel('/content/Resultado_Fusion.xlsx', sheet_name=0)
-    mt = pd.read_excel('/content/Resultado_Fusion.xlsx', sheet_name=1)
+    tr = pd.read_excel(table, sheet_name=0)
+    mt = pd.read_excel(table, sheet_name=1)
 
     map_tr = {'Occurences of enzymes/compounds': 'Occurences of Transcripts'}
     map_mt = {'Occurences of enzymes/compounds': 'Occurences of Metabolites'}
@@ -23,8 +23,8 @@ def ler_TM(table):
 
 
 def ler_PM(table):
-    pr = pd.read_excel('/content/Resultado_Fusion.xlsx', sheet_name=0)
-    mt = pd.read_excel('/content/Resultado_Fusion.xlsx', sheet_name=1)
+    pr = pd.read_excel(table, sheet_name=0)
+    mt = pd.read_excel(table, sheet_name=1)
 
     map_pr = {'Occurences of enzymes/compounds': 'Occurences of Proteins'}
     map_mt = {'Occurences of enzymes/compounds': 'Occurences of Metabolites'}
@@ -43,8 +43,8 @@ def ler_PM(table):
 
 
 def ler_TP(table):
-    tr = pd.read_excel('/content/Resultado_Fusion.xlsx', sheet_name=0)
-    pr = pd.read_excel('/content/Resultado_Fusion.xlsx', sheet_name=1)
+    tr = pd.read_excel(table, sheet_name=0)
+    pr = pd.read_excel(table, sheet_name=1)
 
     map_tr = {'Occurences of enzymes/compounds': 'Occurences of Transcripts'}
     map_pr = {'Occurences of enzymes/compounds': 'Occurences of Proteins'}
@@ -63,9 +63,9 @@ def ler_TP(table):
 
 
 def ler_TPM(table):
-    tr = pd.read_excel('/content/Resultado_Fusion.xlsx', sheet_name=0)
-    pr = pd.read_excel('/content/Resultado_Fusion.xlsx', sheet_name=1)
-    mt = pd.read_excel('/content/Resultado_Fusion.xlsx', sheet_name=2)
+    tr = pd.read_excel(table, sheet_name=0)
+    pr = pd.read_excel(table, sheet_name=1)
+    mt = pd.read_excel(table, sheet_name=2)
 
     map_tr = {'Occurences of enzymes/compounds': 'Occurences of Transcripts'}
     map_pr = {'Occurences of enzymes/compounds': 'Occurences of Proteins'}
